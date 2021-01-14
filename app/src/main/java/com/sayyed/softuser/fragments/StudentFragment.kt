@@ -24,6 +24,7 @@ class StudentFragment : Fragment() {
     private lateinit var rdoFemale : RadioButton
     private lateinit var rdoOthers : RadioButton
     private lateinit var etAddress : EditText
+    private lateinit var etDp : EditText
     private lateinit var btnSave : Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -46,6 +47,7 @@ class StudentFragment : Fragment() {
         rdoFemale = view.findViewById(R.id.rdoFemale)
         rdoOthers = view.findViewById(R.id.rdoOthers)
         etAddress = view.findViewById(R.id.etAddress)
+        etDp = view.findViewById(R.id.etDp)
         btnSave = view.findViewById(R.id.btnSave)
 
         btnSave.setOnClickListener {
@@ -67,6 +69,7 @@ class StudentFragment : Fragment() {
         val age = etAge.text.toString()
         var gender = ""
         val address = etAddress.text.toString()
+        val dp = etDp.text.toString()
 
         when {
             rdoMale.isChecked -> {
@@ -81,7 +84,7 @@ class StudentFragment : Fragment() {
 
         }
 
-        val student = StudentModel(fullname, address, gender, age)
+        val student = StudentModel(fullname, address, gender, age, dp)
 
         val studentToList = StudentsList()
 
@@ -97,6 +100,7 @@ class StudentFragment : Fragment() {
         rdoFemale.isChecked = false
         rdoOthers.isChecked = false
         etAddress.text.clear()
+        etDp.text.clear()
     }
 
 
