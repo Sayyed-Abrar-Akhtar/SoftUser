@@ -1,5 +1,6 @@
 package com.sayyed.softuser.fragments
 
+import android.app.PendingIntent.getActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,10 +9,12 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.RadioButton
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.sayyed.softuser.R
 import com.sayyed.softuser.model.StudentModel
 import com.sayyed.softuser.model.StudentsList
+
+
 
 class StudentFragment : Fragment() {
 
@@ -35,6 +38,8 @@ class StudentFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_student, container, false)
 
+        val context = activity as AppCompatActivity
+
         etFullName = view.findViewById(R.id.etFullName)
         etAge = view.findViewById(R.id.etAge)
         rdoMale = view.findViewById(R.id.rdoMale)
@@ -45,6 +50,13 @@ class StudentFragment : Fragment() {
 
         btnSave.setOnClickListener {
             createStudent()
+
+            val transaction = (activity as AppCompatActivity).supportFragmentManager.beginTransaction()
+            transaction.replace(R.id.linearContainer, HomeFragment())
+            transaction.addToBackStack(null)
+            transaction.commit()
+            clearFields()
+
         }
 
         return view
@@ -78,5 +90,16 @@ class StudentFragment : Fragment() {
         studentToList.printStudentList()
     }
 
+    private fun clearFields() {
+        etFullName.text.clear()
+        etAge.text.clear()
+        rdoMale.isChecked = false
+        rdoFemale.isChecked = false
+        rdoOthers.isChecked = false
+        etAddress.text.clear()
+    }
+
 
 }
+
+

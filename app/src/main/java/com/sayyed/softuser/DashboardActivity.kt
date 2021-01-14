@@ -39,6 +39,7 @@ class DashboardActivity : AppCompatActivity() {
         if (fragment != null) {
             val transaction = supportFragmentManager.beginTransaction()
             transaction.replace(R.id.linearContainer, fragment)
+            transaction.addToBackStack(null)
             transaction.commit()
         }
     }
