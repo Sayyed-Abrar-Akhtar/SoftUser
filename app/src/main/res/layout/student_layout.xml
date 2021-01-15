@@ -5,8 +5,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="120dp"
-    android:layout_margin="16dp"
-    android:background="#D5D1D0">
+    android:layout_marginRight="16dp"
+    android:layout_marginLeft="16dp"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginTop="10dp"
+    android:background="#F3060D32">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/studentImage"
@@ -27,6 +31,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="16dp"
         android:text="Full Name"
+        android:textSize="15sp"
         android:textColor="@color/white"
         app:layout_constraintStart_toEndOf="@+id/studentImage"
         app:layout_constraintTop_toTopOf="parent" />
@@ -37,9 +42,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="14dp"
         android:text="Age"
         android:textColor="@color/white"
+        android:textSize="15sp"
         app:layout_constraintStart_toEndOf="@+id/studentImage"
         app:layout_constraintTop_toBottomOf="@+id/tvFullName" />
 
@@ -49,9 +55,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="14dp"
         android:text="Address"
         android:textColor="@color/white"
+        android:textSize="15sp"
         app:layout_constraintStart_toEndOf="@+id/studentImage"
         app:layout_constraintTop_toBottomOf="@+id/tvAge" />
 
@@ -70,11 +77,11 @@
         android:id="@+id/tvGender"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="20dp"
         android:text="Gender"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.903"
+        app:layout_constraintHorizontal_bias="0.894"
         app:layout_constraintStart_toEndOf="@+id/tvAddress"
         app:layout_constraintTop_toBottomOf="@+id/delStudent" />
 

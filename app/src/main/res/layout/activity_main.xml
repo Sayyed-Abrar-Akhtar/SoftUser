@@ -10,11 +10,13 @@
         android:id="@+id/tvLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="160dp"
+        android:layout_marginTop="44dp"
         android:gravity="center"
         android:text="Login"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
         android:textSize="30sp"
-        android:textColor="@color/design_default_color_primary_dark"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -47,13 +49,19 @@
 
     <Button
         android:id="@+id/btnLogin"
+        style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        android:textSize="21sp"
+        android:background="#3A3A3A"
         android:text="Login"
+        android:textColor="#FFFFFF"
+        android:textSize="21sp"
+        app:backgroundTint="#292929"
+        app:cornerRadius="?android:attr/buttonCornerRadius"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.473"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/etPassword"
+        app:strokeColor="#000000" />
 </androidx.constraintlayout.widget.ConstraintLayout>

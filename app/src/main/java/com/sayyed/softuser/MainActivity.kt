@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import com.sayyed.softuser.model.StudentsList
 
 class MainActivity : AppCompatActivity() {
     private lateinit var etUsername: EditText
@@ -28,6 +29,9 @@ class MainActivity : AppCompatActivity() {
             if (etUsername.text.toString() == username && etPassword.text.toString() == password) {
                 val intent = Intent(this, DashboardActivity::class.java)
                 startActivity(intent)
+                val students =  StudentsList()
+                students.preLoadData()
+
             } else {
                 Toast.makeText(this, "Username and password did not matched!!", Toast.LENGTH_LONG).show()
             }

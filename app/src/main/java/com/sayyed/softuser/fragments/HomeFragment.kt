@@ -11,13 +11,15 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.sayyed.softuser.R
 import com.sayyed.softuser.adapter.StudentAdapter
+import com.sayyed.softuser.model.StudentModel
 import com.sayyed.softuser.model.StudentsList
 
 
 class HomeFragment : Fragment() {
 
     private var listStudent = StudentsList().getStudentList()
-   private lateinit var recyclerView: RecyclerView
+    private lateinit var recyclerView: RecyclerView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,6 +37,7 @@ class HomeFragment : Fragment() {
 
         val context = activity as AppCompatActivity
 
+
         val adapter = StudentAdapter(listStudent, context)
 
         val layoutManager = LinearLayoutManager(context)
@@ -44,6 +47,7 @@ class HomeFragment : Fragment() {
         recyclerView.adapter = adapter
         return view
     }
+
 
 
 }
